@@ -29,8 +29,8 @@ public class Category {
 	@Column(name = "col_categoryName")
 	private String categoryName;
 	
-	@Column(name = "col_descriptionName")
-	private String descriptionName;
+	@Column(name = "col_categoryDescription")
+	private String categoryDescription;
 	
 	@OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Product> products= new ArrayList<>();

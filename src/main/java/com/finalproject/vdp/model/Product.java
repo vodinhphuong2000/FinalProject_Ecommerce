@@ -32,9 +32,11 @@ public class Product {
 	private String productName;
 	
 	@OneToMany(mappedBy = "products",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<VariantProduct> variantProducts= new ArrayList<VariantProduct>();
+	private List<VariantProduct> variantProducts= new ArrayList<>();
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="categoryID",referencedColumnName = "categoryID",nullable = false)
 	private Category category;
+
+
 }

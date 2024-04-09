@@ -41,10 +41,19 @@ public class User {
 	private String fullName;
 	
 	@Column(name = "col_phone")
-	private Integer phone;
+	private String phone;
 	
 	@Column(name = "col_birthDate")
 	private Date birthDate;
+	public boolean validatePhone(String phone) {
+		if (phone == null || phone.isEmpty() || phone.isBlank()) {
+			return false;
+		}
+		if (phone.matches("^0\\d{9}$")) {
+			return true;
+		}
+		return false;
+	}
 	
 	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(name="table_role_user",joinColumns = @JoinColumn(name="userID",referencedColumnName = "userID"),inverseJoinColumns = @JoinColumn(name="roleID",referencedColumnName = "roleID"))

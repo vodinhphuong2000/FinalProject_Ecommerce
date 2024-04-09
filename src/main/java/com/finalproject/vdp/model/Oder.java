@@ -34,7 +34,7 @@ public class Oder {
 	private Date deliveryTime;
 	
 	@Column(name = "col_totalPrice")
-	private float totalPrice;
+	private Double totalPrice;
 	
 	@OneToMany(mappedBy = "oder",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<CartLineItem> cartLineItems =new ArrayList<CartLineItem>();

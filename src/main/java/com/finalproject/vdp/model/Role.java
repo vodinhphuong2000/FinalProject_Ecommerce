@@ -23,6 +23,6 @@ public class Role {
 	@Column(name = "col_roleName")
 	private String roleName;
 	
-	@Column(name = "col_description")
-	private String descriptionName;
+	@Column(name = "col_roleDescription")
+	private String roleDescription;
 }
